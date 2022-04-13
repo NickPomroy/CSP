@@ -9,7 +9,6 @@ def on_submit():
     my_message = Message(message, 3)
     encoded_var.set(my_message.encrypted)
 
-
 root = tk.Tk()
 root.title('Program Title')
 root.geometry('600x600')
