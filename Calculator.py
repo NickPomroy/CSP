@@ -1,57 +1,87 @@
+#Nicholas Pomroy and Adam Fry
+
 import tkinter as tk
-
-def on_submit():
-    message = message_var.get()
-    message = message.lower()
-    if message == '':
-        return
-    
-def one():
-    message +='1'
-
-def two():
-    message +='2'
-
-def three():
-    message +='3'
-
-def four():
-    message +='4'
-
-def five():
-    message +='5'
-
-def six():
-    message +='6'
-
-def seven():
-    message +='7'
-
-def eight():
-    message +='8'
-
-def nine():
-    message +='9'
-
-def zero():
-    message +='0'
-
-def plus():
-    message +='+'
-
-def minus():
-    message +='-'
-
-def multiply():
-    message +='/'
-
-def divide():
-    message +='*'
 
 root = tk.Tk()
 root.title('Calculator')
 root.geometry('600x600')
 root.columnconfigure(1,weight=1)
+
+message_var = tk.StringVar(root)
+message_input = tk.Entry(root,textvariable=message_var)
+
+def on_submit():
+    message_var.set('')
+
+def one():
+    temp= message_var.get()
+    temp +='1'
+    message_var.set(temp)
+
+def two():
+    temp= message_var.get()
+    temp +='2'
+    message_var.set(temp)
+
+def three():
+    temp= message_var.get()
+    temp +='3'
+    message_var.set(temp)
+
+def four():
+    temp= message_var.get()
+    temp +='4'
+    message_var.set(temp)
+
+def five():
+    temp= message_var.get()
+    temp +='5'
+    message_var.set(temp)
+
+def six():
+    temp= message_var.get()
+    temp +='6'
+    message_var.set(temp)
+
+def seven():
+    temp= message_var.get()
+    temp +='7'
+    message_var.set(temp)
+
+def eight():
+    temp= message_var.get()
+    temp +='8'
+    message_var.set(temp)
+
+def nine():
+    temp= message_var.get()
+    temp +='9'
+    message_var.set(temp)
+
+def zero():
+    temp= message_var.get()
+    temp +='0'
+    message_var.set(temp)
+
+def plus():
+    temp= message_var.get()
+    temp +='+'
+    message_var.set(temp)
+
+def minus():
+    temp= message_var.get()
+    temp +='-'
+    message_var.set(temp)
+
+def multiply():
+    temp= message_var.get()
+    temp +='*'
+    message_var.set(temp)
+
+def divide():
+    temp= message_var.get()
+    temp +='/'
+    message_var.set(temp)
 
 # first row
 message_label = tk.Label(
@@ -65,19 +95,6 @@ message_var = tk.StringVar(root)
 message_input = tk.Entry(root,textvariable=message_var)
 message_label.grid(row=0,column=0,sticky=(tk.E),padx=25)
 message_input.grid(row=0,column=1,sticky=(tk.N,tk.S,tk.E,tk.W))
-
-# second row
-Calculation_label = tk.Label(
-    root,
-    text='Calculation:',
-    font=('Arial 16 bold'),
-    bg='green',
-    fg='white'
-)
-encoded_var = tk.StringVar(root)
-encoded_input = tk.Entry(root,textvariable=encoded_var)
-Calculation_label.grid(row=1,column=0,sticky=(tk.E),padx=25)
-encoded_input.grid(row=1,column=1,sticky=(tk.N,tk.S,tk.E,tk.W))
 
 # third row
 one_btn = tk.Button(root,text='1')
@@ -136,7 +153,7 @@ minus_btn = tk.Button(root,text='-')
 minus_btn.grid(row=6,column=1,sticky=(tk.E),padx=10,pady=10)
 minus_btn.configure(command=minus)
 
-calculate_btn = tk.Button(root,text='calculate')
+calculate_btn = tk.Button(root,text='clear')
 calculate_btn.grid(row=6,column=2,sticky=(tk.E),padx=10,pady=10)
 calculate_btn.configure(command=on_submit)
 
