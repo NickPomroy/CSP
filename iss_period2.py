@@ -12,8 +12,6 @@ def get_iss_location(url:str):
         iss_request = urlopen(url)
         iss_location = json.loads(iss_request.read())
 
-        print(iss_location)
-
         longitude = iss_location['iss_position']['longitude']
         latitude = iss_location['iss_position']['latitude']
 
@@ -36,6 +34,7 @@ display = tk.Label(root,font=('Arial 18 bold'),fg='red')
 display.grid(row=0,column=0)
 display.bind('<Button>',refresh)
 
-iss_location = get_iss_location('http://api.open-notify.org/iss-now.json')
+longitude, latitude = get_iss_location('http://api.open-notify.org/iss-now.json')
+print(longitude, latitude)
 
 root.mainloop()
