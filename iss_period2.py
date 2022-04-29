@@ -41,6 +41,7 @@ def refresh(x):
 
     #Using TomTom API get map pic and display in window
     iss_pic_url = "https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&zoom=02&center=" + str(longitude) + "%2C" + str(latitude) + "&width=512&height=512&view=Unified&key=" + cfg.TOMTOM_API_KEY
+    get_image(iss_pic_url)
 
 # Window section
 root = tk.Tk()
@@ -50,7 +51,6 @@ root.geometry('600x600')
 display = tk.Label(root,font=('Arial 18 bold'),fg='red')
 display.bind('<Button>',refresh)
 
-
-
+refresh(1)
 
 root.mainloop()
